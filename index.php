@@ -15,7 +15,7 @@
     <h3>
         PRO CRUD
     </h3>
-    <form action="create.php" method="post">
+    <form action="read.php" method="post">
             <label for="firstname">firstname:</label><br>
             <input type="text" id="firstname" name="firstname"><br>
             <br>
