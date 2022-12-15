@@ -20,7 +20,7 @@ $sql = "SELECT Id
             ,Networth
             ,Age
             ,MyCompany
-        FROM php-pdo-crud-proeftoets
+        FROM RichestPeople
         ORDER BY Id ASC";
 
 $statement = $pdo->prepare($sql);
@@ -29,6 +29,7 @@ $statement->execute();
 
 $result = $statement->fetchAll(PDO::FETCH_OBJ);
 
+var_dump($result);
 
 $rows = "";
 foreach ($result as $info) {
@@ -40,12 +41,12 @@ foreach ($result as $info) {
                 <td>$info->MyCompany</td>
                 <td>
                     <a href='delete.php?id={$info->Id}'>
-                        <img src='b_drop.png' alt='Drop'</img>
+                        <img src='img/b_drop.png' alt='Drop'</img>
                     </a>
                 </td>
                 <td>
                     <a href='update.php'>
-                        <img src='b_edit.png' alt='Edit'</img>
+                        <img src='img/b_edit.png' alt='Edit'</img>
                     </a>
                 </td>
              <tr>";
@@ -62,7 +63,7 @@ foreach ($result as $info) {
         <th>Networth</th>
         <th>Age</th>
         <th>MyCompany</th>
-        <th></th>
+        <th>delete</th>
     </thead>
     <tbody>
         <?= $rows; ?>

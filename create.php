@@ -13,7 +13,7 @@ try {
     echo $e->getMessage();
 }
 
-$sql = "INSERT INTO php-pdo-crud-proeftoets (Id
+$sql = "INSERT INTO RichestPeople (Id
                             ,Name 
                             ,Networth
                             ,Age
