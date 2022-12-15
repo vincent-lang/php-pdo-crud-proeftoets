@@ -21,15 +21,13 @@ $sql = "SELECT Id
             ,Age
             ,MyCompany
         FROM RichestPeople
-        ORDER BY Id ASC";
+        ORDER BY Networth desc";
 
 $statement = $pdo->prepare($sql);
 
 $statement->execute();
 
 $result = $statement->fetchAll(PDO::FETCH_OBJ);
-
-var_dump($result);
 
 $rows = "";
 foreach ($result as $info) {
@@ -64,6 +62,7 @@ foreach ($result as $info) {
         <th>Age</th>
         <th>MyCompany</th>
         <th>delete</th>
+        <th>edit</th>
     </thead>
     <tbody>
         <?= $rows; ?>
