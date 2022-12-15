@@ -20,21 +20,24 @@ try {
 
 //* we gaan een sql-query maken voor het wegschrijven van de formulier gegevens in de tabel persoon
 //* schrijf de sql-insertquery
-$sql = "INSERT INTO persoon (Id
-                            ,Firstname 
-                            ,Infix
-                            ,Lastname) 
+$sql = "INSERT INTO php-pdo-crud-proeftoets (Id
+                            ,Name 
+                            ,Networth
+                            ,Age
+                            ,MyCompany) 
         VALUES              (NULL
-                            ,:firstname
-                            ,:infix
-                            ,:lastname);";
+                            ,:Name
+                            ,:Networth
+                            ,:Age
+                            ,:MyCompany);";
 //* maak de sql-query gereed om te worden afgevuurd op de mysql-database
 $statement = $pdo->prepare($sql);
 
 //* de bindvalue method bind de $_POST waarde aan de placeholder 
-$statement->bindValue(":firstname", $_POST['firstname'], PDO::PARAM_STR);
-$statement->bindValue(":infix", $_POST['infix'], PDO::PARAM_STR);
-$statement->bindValue(":lastname", $_POST['lastname'], PDO::PARAM_STR);
+$statement->bindValue(":Name", $_POST['Name'], PDO::PARAM_STR);
+$statement->bindValue(":Networth", $_POST['Networth'], PDO::PARAM_STR);
+$statement->bindValue(":Age", $_POST['Age'], PDO::PARAM_STR);
+$statement->bindValue(":MyCompany", $_POST['MyCompany'], PDO::PARAM_STR);
 
 //* voer de sql-query uit op de database
 $statement->execute();

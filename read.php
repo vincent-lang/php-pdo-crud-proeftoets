@@ -47,7 +47,7 @@ foreach ($result as $info) {
                 <td>$info->Name</td>
                 <td>$info->Networth</td>
                 <td>$info->Age</td>
-                <td>$info->Mycompany</td>
+                <td>$info->MyCompany</td>
                 <td>
                     <a href='delete.php?id={$info->Id}'>
                         <img src='b_drop.png' alt='Drop'</img>

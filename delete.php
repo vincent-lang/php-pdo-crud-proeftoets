@@ -20,7 +20,7 @@ try {
 }
 
 // Maak een delete query om een record in de tabel Persoon te verwijderen
-$sql = "DELETE FROM persoon
+$sql = "DELETE FROM php-pdo-crud-proeftoets
         WHERE Id = :SQLId";
 
 // Maak de query klaar voor het binden van een waarde aan de placeholder
