@@ -1,14 +1,10 @@
 <?php
 
-// Maak een verbinding met de MYSQL server & database
-// 1. Voeg een configuratiebestand toe
 require('config.php');
 
-// 2. Maak een data source name string
 $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
 
 try {
-    // 3. Maak een pdo-object aan voor het maken van de verbinding
     $pdo = new PDO($dsn,$dbUser,$dbPass);
     if ($pdo) {
         echo "Er is verbinding gemaakt met de MySQL database";
@@ -19,7 +15,6 @@ try {
     echo $e->getMessage();
 }
 
-// 4. Maak een select query voor het opvragen van de gegevens
 $sql = "SELECT Id
             ,Name
             ,Networth
@@ -28,17 +23,12 @@ $sql = "SELECT Id
         FROM php-pdo-crud-proeftoets
         ORDER BY Id ASC";
 
-// 5. We bereiden de query voor met de method prepare
 $statement = $pdo->prepare($sql);
 
-// 6. We vuren de query af op de MySQL-Database
 $statement->execute();
 
-// 7. We stoppen het resultaat van de query in de variable $result
 $result = $statement->fetchAll(PDO::FETCH_OBJ);
 
-// echo $result[0]->Voornaam;
-// var_dump($result);
 
 $rows = "";
 foreach ($result as $info) {
